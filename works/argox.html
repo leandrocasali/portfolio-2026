@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Proyecto | LEANDROCASALI.DSGN</title>
+    
+    <!-- Google Fonts: Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* --- ESTILOS ESPECÍFICOS PARA DETALLE DE PROYECTO --- */
+        .project-container {
+            max-width: 1100px;
+            margin: 120px auto 60px;
+            padding: 0 5%;
+        }
+
+        .back-nav {
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            color: var(--accent);
+            transform: translateX(-5px);
+        }
+
+        /* Cabecera del Proyecto */
+        .project-header {
+            margin-bottom: 40px;
+        }
+
+        .project-tag {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        /* Metadatos */
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 25px 0;
+            border-top: 1px solid rgba(128, 128, 128, 0.15);
+            border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+        }
+
+        @media (min-width: 600px) {
+            .project-meta {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .meta-item h4 {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-item p, .meta-item a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .meta-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Descripción */
+        .project-description {
+            margin: 50px 0;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            line-height: 1.7;
+            opacity: 0.85;
+            max-width: 850px;
+        }
+
+        /* Galería de Imágenes Interactivas */
+        .project-gallery {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 70px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+            background: var(--gray);
+            position: relative;
+            border: 1px solid rgba(128, 128, 128, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-item::after {
+            content: '\f00e';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .img-large {
+            grid-column: 1 / -1;
+        }
+
+        .gallery-duo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .gallery-duo {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Navegación entre proyectos */
+        .project-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(128, 128, 128, 0.15);
+        }
+
+        .nav-project-link {
+            text-decoration: none;
+            color: var(--text);
+            max-width: 45%;
+            transition: var(--transition);
+        }
+
+        .nav-project-link span {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .nav-project-link h5 {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 700;
+        }
+
+        .nav-project-link:hover h5 {
+            color: var(--accent);
+        }
+
+        .nav-next {
+            text-align: right;
+        }
+
+        /* --- LIGHTBOX STYLES --- */
+        #lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(12px);
+            padding: 20px;
+        }
+
+        #lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform: scale(0.92);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        #lightbox.active img {
+            transform: scale(1);
+        }
+
+        #close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        #close-lightbox:hover {
+            background: var(--accent);
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html" class="back-btn">
+                <i data-lucide="arrow-left" size="20"></i> Volver
+            </a>
+            <button class="theme-toggle" id="theme-btn"><i data-lucide="moon" id="theme-icon" size="18"></i></button>
+        </nav>
+    </header>
+
+    <main class="project-container">
+        <section class="project-header reveal">
+            <span class="project-category">Diseño de identidad & Diseño Web & UX</span>
+            <h1 class="project-title">Diseño de marca & Sitio Web</h1>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <h4>Fecha</h4>
+                    <p>2026</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Cliente</h4>
+                    <p>Argox Horizon</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Servicio</h4>
+                    <p>Diseño de Marca - Diseño y desarrollo de sitio web</p>
+                </div>
+                <div class="meta-item">
+                    <h4>Link</h4>
+                    <p><a href="#" style="color:var(--accent); text-decoration:none;">ver sitio web</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-description reveal">
+            <p>Diseño de marca y diseño y desarrollo de sitio web institucional</p>
+        </section>
+
+        <section class="project-gallery">
+            <div class="gallery-item img-large reveal lightbox-trigger">
+                <img src="argox/argox-01.jpg" alt="Hero Image">
+            </div>
+            
+            <div class="gallery-duo">
+                <div class="gallery-item reveal lightbox-trigger">
+                    <img src="argox/argox-02.jpg" alt="Mobile View">
+                </div>
+                <div class="gallery-item reveal lightbox-trigger">
+                    <img src="argox/argox-03.jpg" alt="Details">
+                </div>
+                <div class="gallery-item reveal lightbox-trigger">
+                    <img src="argox/argox-04.jpg" alt="Details">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer class="main-footer-light">
+    <div class="footer-light-container">
+        
+        <!-- CABECERA DE CONTACTO CON STATUS BADGE -->
+        <div class="footer-light-header reveal">
+            <div class="availability-badge-light">
+                <span class="status-dot"></span>
+                <span>Disponible para nuevos proyectos</span>
+            </div>
+            <h2 class="footer-light-headline">
+                ¿Tienes una idea en mente? <br>
+                <span class="highlight">Hablemos hoy.</span>
+            </h2>
+        </div>
+
+        <!-- BOTONES DE CONTACTO DIRECTO (EMAIL, WHATSAPP & LINKEDIN) -->
+        <div class="footer-actions reveal">
+            <a href="mailto:info@leandrocasali.com" class="action-btn btn-email">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Enviar un Email</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </a>
+
+            <a href="https://wa.me/5491133343942" target="_blank" class="action-btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Escribir por WhatsApp</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/leandrocasali/" target="_blank" class="action-btn btn-linkedin">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>Conectar en LinkedIn</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </a>
+        </div>
+
+        <!-- PIE DE PÁGINA INFERIOR -->
+        <div class="footer-light-bottom reveal">
+            <p>© 2026 Leandro Casali. Diseñador Multidisciplinario.</p>
+            <p class="credits-sub">Diseño & Desarrollo Web</p>
+        </div>
+
+    </div>
+</footer>
+
+    <div id="lightbox">
+        <button id="close-lightbox"><i data-lucide="x" size="24"></i></button>
+        <img src="" alt="Zoomed Image">
+    </div>
+
+
+    <script>
+        lucide.createIcons();
+
+        // MODO OSCURO
+        const themeBtn = document.getElementById('theme-btn');
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('theme-icon').setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+            lucide.createIcons();
+        });
+
+        // 1. LÓGICA DE ANIMACIONES DE REVELADO (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Una vez revelado, dejamos de observarlo para rendimiento
+                    revealOnScroll.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Ajuste para que empiece un poco antes de entrar en pantalla
+            rootMargin: '0px 0px -50px 0px' 
+        });
+
+        revealElements.forEach(element => {
+            revealOnScroll.observe(element);
+        });
+
+        // 2. LÓGICA DEL LIGHTBOX (Ver imágenes en grande)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeBtn = document.getElementById('close-lightbox');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                // Obtenemos el src de la imagen que está dentro del contenedor
+                const imgSrc = trigger.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                // Deshabilitar scroll del body al abrir
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        function closeLightboxFunc() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Rehabilitar scroll
+            // Limpiamos el src para que no haya "flash" al reabrir
+            setTimeout(() => { lightboxImg.src = ''; }, 400); 
+        }
+
+        closeBtn.addEventListener('click', closeLightboxFunc);
+        // Cerrar también al hacer clic fuera de la imagen
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightboxFunc();
+            }
+        });
+        // Cerrar con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightboxFunc();
+            }
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Creativo | Tu Nombre</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <!-- FONDO ANIMADO SUTIL (GRADIENTE FLUIDO) -->
+    <!-- <div class="ambient-background">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div> -->
+
+<!-- TRAMA GEOMÉTRICA ANIMADA DE FONDO -->
+    <canvas id="grid-canvas"></canvas>
+
+    <header>
+        <nav>
+            <div class="logo"><b>LEANDROCASALI</b>.DSGN</div>
+            <div class="nav-right">
+               <div class="social-icons">
+                    <a href="https://wa.me/5491133343942" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:info@leandrocasali.com"><i class="fa-regular fa-envelope"></i></a>
+                    <!-- <a href="#" target="_blank"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a> -->
+                </div> 
+                <div class="lang-selector">
+                    <img src="https://flagcdn.com/w40/ar.png" class="lang-flag active" alt="es" title="Español">
+                    <img src="https://flagcdn.com/w40/gb.png" class="lang-flag" alt="en" title="English">
+                </div>
+                <button class="theme-toggle" id="theme-btn" title="Cambiar Modo">
+                    <i data-lucide="moon" id="theme-icon" size="18"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO CON BOTÓN VER PROYECTOS -->
+<section id="hero">
+    <h1 class="hero-title">
+        <span id="typewriter"></span>
+    </h1>
+    <p class="hero-description reveal" data-key="heroDesc">
+        Creatividad aplicada a soluciones de negocio reales.
+    </p>
+    
+    <!-- Botón de Scroll hacia el Portfolio -->
+    <a href="#proyectos" class="hero-cta-btn reveal">
+        <span>Ver proyectos</span>
+        <i class="fa-solid fa-arrow-down"></i>
+    </a>
+</section>
+
+        <!-- SECCIÓN DE SERVICIOS CON CARDS FLIP 3D -->
+         
+        <section id="servicios">
+            <div class="grid-servicios">
+                
+                <!-- Card 1 -->
+                <div class="servicio-card reveal">
+                    <div class="servicio-card-inner">
+                        <div class="card-front">
+                            <div class="lottie-container">
+                                <lottie-player src="animation/vector.json" speed="1" loop autoplay></lottie-player>
+                            </div>
+                            <h3>Branding & Identidad de Marca</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Branding & Identidad</h3>
+                            <p class="description-service">Estrategia, naming y creación de sistemas visuales integrales, manuales de marca y reposicionamiento gráfico.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="servicio-card reveal">
+                    <div class="servicio-card-inner">
+                        <div class="card-front">
+                            <div class="lottie-container">
+                                <lottie-player src="animation/responsive-design (1).json" loop autoplay></lottie-player>
+                            </div>
+                            <h3>Diseño UX/UI</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Diseño UX/UI</h3>
+                            <p class="description-service">Investigación de usuarios, arquitectura de información, prototipado e interfaces atractivas e intuitivas para web y aplicaciones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="servicio-card reveal">
+                    <div class="servicio-card-inner">
+                        <div class="card-front">
+                            <div class="lottie-container">
+                                <lottie-player src="animation/web-developer.json" speed="1" loop autoplay></lottie-player>
+                            </div>
+                            <h3>Desarrollo Web & WordPress</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Desarrollo Web</h3>
+                            <p class="description-service">Maquetación y programación de sitios web a medida, e-commerce y landing pages en WordPress, Webflow o código (HTML/CSS), optimizados, seguros y adaptables (responsive).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="servicio-card reveal">
+                    <div class="servicio-card-inner">
+                        <div class="card-front">
+                            <div class="lottie-container">
+                                <lottie-player src="animation/computer.json" speed="1" loop autoplay></lottie-player>
+                            </div>
+                            <h3>Diseño Editorial & Publicaciones</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Diseño Editorial</h3>
+                            <p class="description-service">Diagramación y maquetación profesional de libros, revistas, catálogos, memorias corporativas y documentos digitales interactivos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="servicio-card reveal">
+                    <div class="servicio-card-inner">
+                        <div class="card-front">
+                            <div class="lottie-container">
+                                <lottie-player src="animation/idea.json" speed="1" loop autoplay></lottie-player>
+                            </div>
+                            <h3>Dirección de Arte & Comunicación Visual</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Dirección de Arte</h3>
+                            <p class="description-service">Concepto y supervisión gráfica para campañas, packaging, material impreso, señalética y presencia visual de alto impacto.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="servicio-card reveal">
+                    <div class="servicio-card-inner">
+                        <div class="card-front">
+                            <div class="lottie-container">
+                                <lottie-player src="animation/conversation.json" speed="1" loop autoplay></lottie-player>
+                            </div>
+                            <h3>Consultoría Creativa & Auditoría Visual</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Consultoría Creativa</h3>
+                            <p class="description-service">Asesoramiento estratégico para empresas y marcas que buscan evolucionar, optimizar sus procesos de diseño o auditar su imagen actual.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Título de Sección -->
+        <div class="section-title-container reveal">
+            <h2 class="section-title">Proyectos destacados</h2>
+            <p class="section-subtitle">Selección de trabajos en Branding, Web, UX/UI y Editorial</p>
+        </div>
+
+        <div class="filters reveal">
+            <button class="filter-btn active" data-filter="all" data-key="filterAll">Todos</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="logo">Logo</button>
+            <button class="filter-btn" data-filter="app">App</button>
+            <button class="filter-btn" data-filter="editorial">Editorial</button>
+        </div>
+
+        <section id="proyectos">
+
+            <div class="grid-proyectos">
+                <a href="works/crude-communication.html" class="proyecto-card show" data-category="web">
+                    <img src="works/crude-communication/crude-01.jpg" alt="Trabajo 1">
+                    <div class="info"><h3 class="anim-title" data-text="Crude Communication">Crude Communication</h3></div>
+                </a>
+                <a href="works/liniers.html" class="proyecto-card show" data-category="web">
+                    <img src="works/liniers/liniers-05.jpg" alt="Trabajo 2">
+                    <div class="info"><h3 class="anim-title" data-text="Liniers">Liniers</h3></div>
+                </a>
+                <a href="works/mabau.html" class="proyecto-card show" data-category="web logo">
+                    <img src="works/mabau/mabau-01.jpg" alt="Trabajo 3">
+                    <div class="info"><h3 class="anim-title" data-text="Mabau">Mabau</h3></div>
+                </a>
+                <a href="works/teklay.html" class="proyecto-card show" data-category="logo web">
+                    <img src="works/teklay/teklay-01.jpg" alt="Trabajo 4">
+                    <div class="info"><h3 class="anim-title" data-text="Teklay">Teklay</h3></div>
+                </a>
+                <a href="works/morfi-empanadas.html" class="proyecto-card show" data-category="logo">
+                    <img src="works/morfi-empanadas/morfi-02.jpg" alt="Trabajo 5">
+                    <div class="info"><h3 class="anim-title" data-text="Morfi empanadas">Morfi empanadas</h3></div>
+                </a>
+                <a href="works/argox.html" class="proyecto-card show" data-category="logo web editorial">
+                    <img src="works/argox/argox-01.jpg" alt="Trabajo 6">
+                    <div class="info"><h3 class="anim-title" data-text="Argox Horizon">Argox Horizon</h3></div>
+                </a>
+                <a href="works/mobac.html" class="proyecto-card show" data-category="logo web editorial">
+                    <img src="works/mobac/mobac-01.jpg" alt="Trabajo 7">
+                    <div class="info"><h3 class="anim-title" data-text="Mobac">Mobac</h3></div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+<footer class="main-footer-light">
+    <div class="footer-light-container">
+        
+        <!-- CABECERA DE CONTACTO CON STATUS BADGE -->
+        <div class="footer-light-header reveal">
+            <div class="availability-badge-light">
+                <span class="status-dot"></span>
+                <span>Disponible para nuevos proyectos</span>
+            </div>
+            <h2 class="footer-light-headline">
+                ¿Tienes una idea en mente? <br>
+                <span class="highlight">Hablemos hoy.</span>
+            </h2>
+        </div>
+
+        <!-- BOTONES DE CONTACTO DIRECTO (EMAIL, WHATSAPP & LINKEDIN) -->
+        <div class="footer-actions reveal">
+            <a href="mailto:info@leandrocasali.com" class="action-btn btn-email">
+                <i class="fa-regular fa-envelope"></i>
+                <span>Enviar un Email</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </a>
+
+            <a href="https://wa.me/5491133343942" target="_blank" class="action-btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>Escribir por WhatsApp</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/leandrocasali/" target="_blank" class="action-btn btn-linkedin">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span>Conectar en LinkedIn</span>
+                <i class="fa-solid fa-arrow-right icon-arrow"></i>
+            </a>
+        </div>
+
+        <!-- PIE DE PÁGINA INFERIOR -->
+        <div class="footer-light-bottom reveal">
+            <p>© 2026 Leandro Casali. Diseñador Multidisciplinario.</p>
+            <p class="credits-sub">Diseño & Desarrollo Web</p>
+        </div>
+
+    </div>
+</footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
